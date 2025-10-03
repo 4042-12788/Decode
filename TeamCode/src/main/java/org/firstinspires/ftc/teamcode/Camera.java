@@ -8,16 +8,16 @@ import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
 public class Camera extends LinearOpMode {
 
     //The variable to store our instance of the AprilTag processor.
-    public static int aprilTagID = 0;
-    public static double aprilTagX = 0;
-    public static double aprilTagY = 0;
-    public static double aprilTagZ = 0;
-    public static double aprilTagPitch = 0;
-    public static double aprilTagRoll = 0;
-    public static double aprilTagYaw = 0;
-    public static double aprilTagRange = 0;
-    public static double aprilTagBearing = 0;
-    public static double aprilTagElevation = 0;
+    public static int aprilTagID;
+    public static double aprilTagX;
+    public static double aprilTagY;
+    public static double aprilTagZ;
+    public static double aprilTagPitch;
+    public static double aprilTagRoll;
+    public static double aprilTagYaw;
+    public static double aprilTagRange;
+    public static double aprilTagBearing;
+    public static double aprilTagElevation;
 
     public static AprilTagProcessor tagProcessor;
     private VisionPortal visionPortal;

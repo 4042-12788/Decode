@@ -6,6 +6,7 @@ public class CameraServo{
     final int redGoalTag = 24;
     int allianceColorTag;
     Servo cameraServo;
+    public static double robotBearing;
     public void runCamServo(boolean RED) {
         if(RED){
             allianceColorTag = redGoalTag;
@@ -17,7 +18,7 @@ public class CameraServo{
 
         if(Camera.aprilTagBearing != 0 ) {
             if(!Camera.tagProcessor.getDetections().isEmpty() && Camera.aprilTagID == allianceColorTag){
-                if(cameraServo.getPosition() + (Camera.aprilTagBearing/180) >= 0) {
+                if(cameraServo.getPosition() + (Camera.aprilTagBearing/180) >= 0||cameraServo.getPosition() + (Camera.aprilTagBearing/180)<1) {
                     cameraServo.setPosition(cameraServo.getPosition() + (Camera.aprilTagBearing/180));
                 } else if (Camera.aprilTagBearing>0) {
                     cameraServo.setPosition(1);
@@ -34,5 +35,6 @@ public class CameraServo{
                 }
             }
         }
+        robotBearing = Camera.aprilTagBearing + ((cameraServo.getPosition()-0.5)*360);
     }
 }
