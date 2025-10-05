@@ -45,7 +45,7 @@ public class Camera extends LinearOpMode {
         VisionPortal.Builder builder = new VisionPortal.Builder();
 
         // Set the camera (webcam vs. built-in RC phone camera).
-        builder.setCamera(hardwareMap.get(WebcamName.class, "AprilTag Webcam"));
+        builder.setCamera(hardwareMap.get(WebcamName.class, "Apriltag Cam"));
 
         builder.setCameraResolution(new Size(640, 480));
 

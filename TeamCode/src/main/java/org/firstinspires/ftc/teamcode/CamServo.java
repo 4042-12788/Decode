@@ -1,12 +1,16 @@
 package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class CameraServo{
+public class CamServo {
     final int blueGoalTag = 20;
     final int redGoalTag = 24;
     int allianceColorTag;
     Servo cameraServo;
     public static double robotBearing;
+    public CamServo(HardwareMap hardwareMap){
+        cameraServo = hardwareMap.get(Servo.class, " Cam Servo");
+    }
     public void runCamServo(boolean RED) {
         if(RED){
             allianceColorTag = redGoalTag;
