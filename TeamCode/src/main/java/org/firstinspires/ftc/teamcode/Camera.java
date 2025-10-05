@@ -56,21 +56,18 @@ public class Camera extends LinearOpMode {
         visionPortal = builder.build();
 
         visionPortal.setProcessorEnabled(tagProcessor, true);
-
-        while (!isStopRequested() && opModeIsActive()) {
-            if(tagProcessor.getDetections().size()>0){
-                AprilTagDetection tag = tagProcessor.getDetections().get(0);
-                aprilTagID = tag.id;
-                aprilTagX = tag.ftcPose.x;
-                aprilTagY = tag.ftcPose.y;
-                aprilTagZ = tag.ftcPose.z;
-                aprilTagPitch = tag.ftcPose.pitch;
-                aprilTagRoll = tag.ftcPose.roll;
-                aprilTagYaw = tag.ftcPose.yaw;
-                aprilTagRange = tag.ftcPose.range;
-                aprilTagBearing = tag.ftcPose.bearing;
-                aprilTagElevation = tag.ftcPose.elevation;
-            }
+        if(tagProcessor.getDetections().size()>0){
+            AprilTagDetection tag = tagProcessor.getDetections().get(0);
+            aprilTagID = tag.id;
+            aprilTagX = tag.ftcPose.x;
+            aprilTagY = tag.ftcPose.y;
+            aprilTagZ = tag.ftcPose.z;
+            aprilTagPitch = tag.ftcPose.pitch;
+            aprilTagRoll = tag.ftcPose.roll;
+            aprilTagYaw = tag.ftcPose.yaw;
+            aprilTagRange = tag.ftcPose.range;
+            aprilTagBearing = tag.ftcPose.bearing;
+            aprilTagElevation = tag.ftcPose.elevation;
         }
     }
 }

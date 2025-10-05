@@ -39,6 +39,7 @@ public class TeleRED extends LinearOpMode {
             //                                  GAMEPAD 2
             //-------------------------------------------------------------------------------------
             robot.launcher.launchArtifact(gp2.a.pressing(),-gp1.left_stick_x,-gp1.left_stick_y);
+            robot.intake.intake(gp2.x.pressing(), gp2.b.pressing());
             //-------------------------------------------------------------------------------------
             //                                  AUTOMATIC
             //-------------------------------------------------------------------------------------
