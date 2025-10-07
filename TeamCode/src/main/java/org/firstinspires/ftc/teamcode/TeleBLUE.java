@@ -9,8 +9,7 @@ public class TeleBLUE extends LinearOpMode {
     Robot robot;
     Controller gp1;
     Controller gp2;
-
-    Servo testServo;
+    public boolean RED = false;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -38,12 +37,12 @@ public class TeleBLUE extends LinearOpMode {
             //-------------------------------------------------------------------------------------
             //                                  GAMEPAD 2
             //-------------------------------------------------------------------------------------
-            robot.launcher.launchArtifact(gp2.a.pressing(),-gp1.left_stick_x,-gp1.left_stick_y);
+            robot.launcher.launchArtifact(gp2.a.pressing(),-gp1.left_stick_x,-gp1.left_stick_y, robot.drive);
             robot.intake.intake(gp2.x.pressing(), gp2.b.pressing());
             //-------------------------------------------------------------------------------------
             //                                  AUTOMATIC
             //-------------------------------------------------------------------------------------
-            robot.cameraServo.runCamServo(false);
+            robot.cameraServo.runCamServo(RED);
             //-------------------------------------------------------------------------------------
             //                                  TELEMETRY
             //-------------------------------------------------------------------------------------

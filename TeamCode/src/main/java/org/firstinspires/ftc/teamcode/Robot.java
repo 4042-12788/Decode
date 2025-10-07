@@ -9,7 +9,7 @@ public class Robot {
     public FlyWheel launcher;
     public CamServo cameraServo;
     public Intake intake;
-    public boolean RED;
+    public InternalMeasurementUnit imu;
 
     public Robot(HardwareMap hardwareMap, Telemetry telemetry) {
         this.hardwareMap = hardwareMap;
@@ -19,5 +19,6 @@ public class Robot {
         launcher = new FlyWheel(hardwareMap);
         cameraServo = new CamServo(hardwareMap);
         intake = new Intake(hardwareMap);
+        imu = new InternalMeasurementUnit(hardwareMap);
     }
 }
