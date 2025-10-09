@@ -2,10 +2,9 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp
-public class TeleBLUE extends LinearOpMode {
+public class Tele extends LinearOpMode {
     Robot robot;
     Controller gp1;
     Controller gp2;
@@ -42,7 +41,7 @@ public class TeleBLUE extends LinearOpMode {
             //-------------------------------------------------------------------------------------
             //                                  AUTOMATIC
             //-------------------------------------------------------------------------------------
-            robot.cameraServo.runCamServo(RED);
+            //robot.cameraServo.runCamServo(RED);
             //-------------------------------------------------------------------------------------
             //                                  TELEMETRY
             //-------------------------------------------------------------------------------------
