@@ -39,6 +39,5 @@ public class CamServo {
                 }
             }
         }
-        robotBearing = Camera.aprilTagBearing + ((cameraServo.getPosition()-0.5)*360);
     }
 }
