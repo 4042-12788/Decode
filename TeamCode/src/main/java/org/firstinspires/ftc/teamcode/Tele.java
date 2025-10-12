@@ -8,7 +8,8 @@ public class Tele extends LinearOpMode {
     Robot robot;
     Controller gp1;
     Controller gp2;
-    public boolean RED = false;
+    public int allianceTag = 20;
+    //for blue, for red its 24
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -17,11 +18,9 @@ public class Tele extends LinearOpMode {
         gp1 = new Controller(gamepad1);
         gp2 = new Controller(gamepad2);
 
-        //robot.init();
         waitForStart();
         telemetry.addLine("Initializing");
         telemetry.update();
-        //robot.update();
 
         while (opModeIsActive()){
             gp1.update();

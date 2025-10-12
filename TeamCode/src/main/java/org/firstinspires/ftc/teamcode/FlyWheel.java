@@ -7,7 +7,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 public class FlyWheel{
     private DcMotor flyWheel;
-    PIDController control = new PIDController();
+    private PIDController control = new PIDController();
     public  FlyWheel(HardwareMap hardwareMap){
         flyWheel = hardwareMap.get(DcMotor.class, "Flywheel");
     }

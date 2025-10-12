@@ -10,6 +10,7 @@ public class Robot {
     public CamServo cameraServo;
     public Intake intake;
     public InternalMeasurementUnit imu;
+    public Camera cam;
 
     public Robot(HardwareMap hardwareMap, Telemetry telemetry) {
         this.hardwareMap = hardwareMap;
@@ -20,5 +21,6 @@ public class Robot {
         cameraServo = new CamServo(hardwareMap);
         intake = new Intake(hardwareMap);
         imu = new InternalMeasurementUnit(hardwareMap);
+        cam = new Camera(hardwareMap);
     }
 }

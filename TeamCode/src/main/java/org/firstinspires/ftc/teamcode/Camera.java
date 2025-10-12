@@ -1,35 +1,19 @@
 package org.firstinspires.ftc.teamcode;
 import android.util.Size;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
-public class Camera extends LinearOpMode {
-
-    //The variable to store our instance of the AprilTag processor.
-    public static int aprilTagID;
-    public static double aprilTagX;
-    public static double aprilTagY;
-    public static double aprilTagZ;
-    public static double aprilTagPitch;
-    public static double aprilTagRoll;
-    public static double aprilTagYaw;
-    public static double aprilTagRange;
-    public static double aprilTagBearing;
-    public static double aprilTagElevation;
+public class Camera{
 
     public static AprilTagProcessor tagProcessor;
-    private VisionPortal visionPortal;
+    public VisionPortal visionPortal;
 
-    @Override
-    public void runOpMode() {
 
-        initAprilTag();
-        waitForStart();
-    }
-
-    private void initAprilTag() {
+    public Camera(HardwareMap hardwareMap) {
 
         tagProcessor = new AprilTagProcessor.Builder()
                 .setDrawAxes(true)
@@ -56,18 +40,16 @@ public class Camera extends LinearOpMode {
         visionPortal = builder.build();
 
         visionPortal.setProcessorEnabled(tagProcessor, true);
-        if(tagProcessor.getDetections().size()>0){
-            AprilTagDetection tag = tagProcessor.getDetections().get(0);
-            aprilTagID = tag.id;
-            aprilTagX = tag.ftcPose.x;
-            aprilTagY = tag.ftcPose.y;
-            aprilTagZ = tag.ftcPose.z;
-            aprilTagPitch = tag.ftcPose.pitch;
-            aprilTagRoll = tag.ftcPose.roll;
-            aprilTagYaw = tag.ftcPose.yaw;
-            aprilTagRange = tag.ftcPose.range;
-            aprilTagBearing = tag.ftcPose.bearing;
-            aprilTagElevation = tag.ftcPose.elevation;
-        }
     }
+//        tagProcessor.getDetections().size()
+//        AprilTagDetection tag = tagProcessor.getDetections().get();
+//        tag.ftcPose.x;
+//        tag.ftcPose.y;
+//        tag.ftcPose.z;
+//        tag.ftcPose.pitch;
+//        tag.ftcPose.roll;
+//        tag.ftcPose.yaw;
+//        tag.ftcPose.range;
+//        tag.ftcPose.bearing;
+//        tag.ftcPose.elevation;
 }
