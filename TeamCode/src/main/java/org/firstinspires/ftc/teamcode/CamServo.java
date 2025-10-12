@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 
@@ -12,12 +11,11 @@ public class CamServo {
         cameraServo = hardwareMap.get(CRServo.class, " Cam Servo");
     }
     public void trackAprilTag(int allianceTag, Camera camera){
-        if(!camera.tagProcessor.getDetections().isEmpty());
-        {
+        if(!camera.tagProcessor.getDetections().isEmpty());{
             AprilTagDetection tag = camera.tagProcessor.getDetections().get(allianceTag);
-            double error = (tag.ftcPose.bearing + 39)/78;
+            double error = (tag.ftcPose.bearing + 40)/80;
             double power = 0.4;
-            if(error<0.45 && error>0.55) power = 0;
+            if(error>0.45 && error<0.55) power = 0;
             cameraServo.setPower(power * error);
         }
     }

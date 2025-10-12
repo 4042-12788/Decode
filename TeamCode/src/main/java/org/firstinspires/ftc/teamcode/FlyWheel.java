@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 
 public class FlyWheel{
     private DcMotor flyWheel;
@@ -11,10 +12,11 @@ public class FlyWheel{
     public  FlyWheel(HardwareMap hardwareMap){
         flyWheel = hardwareMap.get(DcMotor.class, "Flywheel");
     }
-    public void launchArtifact(boolean gp1a, double x, double y, MecanumDrive drive, InternalMeasurementUnit imu){
+    public void launchArtifact(boolean gp1a, double x, double y, MecanumDrive drive, InternalMeasurementUnit imu, Camera camera, int tagID){
+        AprilTagDetection tag = camera.tagProcessor.getDetections().get(tagID);
         if(gp1a){
             drive.calculateDrivePowers(x, y, control.pidOutput(imu.heading(AngleUnit.DEGREES) + CamServo.robotBearing, imu.heading(AngleUnit.DEGREES)));
-            flyWheel.setPower(Camera.aprilTagRange/200);
+            flyWheel.setPower(tag.ftcPose.bearing/200);
         }else{
             flyWheel.setPower(0);
         }
