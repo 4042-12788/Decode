@@ -30,17 +30,17 @@ public class Tele extends LinearOpMode {
             //                                  GAMEPAD 1
             //-------------------------------------------------------------------------------------
 
-            robot.drive.calculateDrivePowers(-gp1.left_stick_x, -gp1.left_stick_y, gp1.right_stick_x);
+            robot.drive.FieldOrientedDrive(-gp1.left_stick_x, -gp1.left_stick_y, gp1.right_stick_x, robot.imu);
 
             //-------------------------------------------------------------------------------------
             //                                  GAMEPAD 2
             //-------------------------------------------------------------------------------------
-            robot.launcher.launchArtifact(gp2.a.pressing(),-gp1.left_stick_x,-gp1.left_stick_y, robot.drive, robot.imu, robot.cam, allianceTag);
-            robot.intake.intake(gp2.x.pressing(), gp2.b.pressing());
+            //robot.launcher.launchArtifact(gp2.a.pressing(),-gp1.left_stick_x,-gp1.left_stick_y, robot.drive, robot.imu, robot.cam, allianceTag);
+            //robot.intake.intake(gp2.x.pressing(), gp2.b.pressing());
             //-------------------------------------------------------------------------------------
             //                                  AUTOMATIC
             //-------------------------------------------------------------------------------------
-            robot.cameraServo.runCamServo(RED);
+            //robot.cameraServo.trackAprilTag(allianceTag, robot.cam);
             //-------------------------------------------------------------------------------------
             //                                  TELEMETRY
             //-------------------------------------------------------------------------------------

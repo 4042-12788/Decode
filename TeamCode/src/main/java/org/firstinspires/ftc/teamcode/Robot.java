@@ -17,7 +17,7 @@ public class Robot {
         this.telemetry = telemetry;
 
         drive = new MecanumDrive(hardwareMap, telemetry);
-        launcher = new FlyWheel(hardwareMap);
+        launcher = new FlyWheel(hardwareMap, telemetry);
         cameraServo = new CamServo(hardwareMap);
         intake = new Intake(hardwareMap);
         imu = new InternalMeasurementUnit(hardwareMap);
