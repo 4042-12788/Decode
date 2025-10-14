@@ -6,15 +6,15 @@ public class Intake {
     public Intake(HardwareMap hardwareMap){
         intakeWheel = hardwareMap.get(DcMotor.class,"Intake");
     }
-    public void intake(boolean gp2x, boolean gp2b){
-        if(gp2x){
-            intakeWheel.setPower(1);
+    public void intake(double leftTrigger, boolean leftBump){
+        if(leftTrigger<=0.05 && !leftBump){
+            intakeWheel.setPower(0);
         }
-        if(gp2b){
+        if(leftBump){
             intakeWheel.setPower(-1);
         }
-        if(!gp2x && !gp2b){
-            intakeWheel.setPower(0);
+        if(leftTrigger>0.05){
+            intakeWheel.setPower(1);
         }
     }
 }

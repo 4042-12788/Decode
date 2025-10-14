@@ -6,7 +6,7 @@ public class Robot {
     HardwareMap hardwareMap;
     Telemetry telemetry;
     public MecanumDrive drive;
-    public FlyWheel launcher;
+    public Launcher launcher;
     public CamServo cameraServo;
     public Intake intake;
     public InternalMeasurementUnit imu;
@@ -17,7 +17,7 @@ public class Robot {
         this.telemetry = telemetry;
 
         drive = new MecanumDrive(hardwareMap, telemetry);
-        launcher = new FlyWheel(hardwareMap, telemetry);
+        launcher = new Launcher(hardwareMap, telemetry);
         cameraServo = new CamServo(hardwareMap);
         intake = new Intake(hardwareMap);
         imu = new InternalMeasurementUnit(hardwareMap);
