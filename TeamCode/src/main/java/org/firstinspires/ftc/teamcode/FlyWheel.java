@@ -9,8 +9,12 @@ import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 public class FlyWheel{
     private DcMotor flyWheel;
     private PIDController control = new PIDController();
+
     public  FlyWheel(HardwareMap hardwareMap, Telemetry telemetry){
         flyWheel = hardwareMap.get(DcMotor.class, "Flywheel");
+        control.setP(0);
+        control.setI(0);
+        control.setD(0);
     }
     public void launchArtifact(boolean gp1a, double x, double y, MecanumDrive drive, InternalMeasurementUnit imu, Camera camera, int tagID){
         AprilTagDetection tag = camera.tagProcessor.getDetections().get(tagID);
