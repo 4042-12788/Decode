@@ -55,18 +55,13 @@ public class MecanumDrive {
 
         setDrivePowers(leftFrontPower, leftBackPower, rightFrontPower, rightBackPower);
     }
-    public void FieldOrientedDrive(double x, Double y, double rot, InternalMeasurementUnit imu){
-        double newX = x * Math.cos(imu.heading(AngleUnit.RADIANS)) - y * Math.sin(imu.heading(AngleUnit.RADIANS));
-        double newY = x * Math.sin(imu.heading(AngleUnit.RADIANS)) + y * Math.cos(imu.heading(AngleUnit.RADIANS));
+    public void FieldOrientedDrive(double x, Double y, double rot, InternalMeasurementUnit imu) {
+        double theta = Math.atan2(y, x);
+        double distance = Math.hypot(x, y);
+        theta = AngleUnit.normalizeRadians(theta - imu.heading(AngleUnit.RADIANS));
+        double newX = distance * Math.sin(theta);
+        double newY = distance * Math.cos(theta);
         calculateDrivePowers(newX, newY, rot);
+
     }
-//    public void FieldOrientedDrive(double x, Double y, double rot, InternalMeasurementUnit imu) {
-//        double theta = Math.atan2(y, x);
-//        double distance = Math.hypot(x, y);
-//        theta = AngleUnit.normalizeRadians(theta - imu.heading(AngleUnit.RADIANS));
-//        double newX = distance * Math.sin(theta);
-//        double newY = distance * Math.cos(theta);
-//        calculateDrivePowers(newX, newY, rot);
-//
-//    }
 }
