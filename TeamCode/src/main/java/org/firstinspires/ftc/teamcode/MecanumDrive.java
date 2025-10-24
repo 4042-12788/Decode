@@ -55,7 +55,7 @@ public class MecanumDrive {
 
         setDrivePowers(leftFrontPower, leftBackPower, rightFrontPower, rightBackPower);
     }
-    public void FieldOrientedDrive(double x, Double y, double rot, InternalMeasurementUnit imu) {
+    public void FieldOrientedDrive(double x, Double y, double rot, InertialMeasurementUnit imu) {
         double theta = Math.atan2(y, x);
         double distance = Math.hypot(x, y);
         theta = AngleUnit.normalizeRadians(theta - imu.heading(AngleUnit.RADIANS));

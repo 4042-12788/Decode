@@ -2,12 +2,13 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 
 public class CamServo {
     CRServo cameraServo;
     public static double robotBearing;
-    public CamServo(HardwareMap hardwareMap){
+    public CamServo(HardwareMap hardwareMap, Telemetry telemetry){
         cameraServo = hardwareMap.get(CRServo.class, " Cam Servo");
     }
     public void trackAprilTag(int allianceTag, Camera camera){

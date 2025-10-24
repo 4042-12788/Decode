@@ -19,7 +19,7 @@ public class Launcher {
         control.setI(0);
         control.setD(0);
     }
-    public void launchArtifact(double spinUp, Button launch, double x, double y, MecanumDrive drive, InternalMeasurementUnit imu, Camera camera, int tagID){
+    public void launchArtifact(double spinUp, Button launch, double x, double y, MecanumDrive drive, InertialMeasurementUnit imu, Camera camera, int tagID){
         AprilTagDetection tag = camera.tagProcessor.getDetections().get(tagID);
         if(spinUp>0.5){
             drive.calculateDrivePowers(x, y, control.pidOutput(imu.heading(AngleUnit.DEGREES) + CamServo.robotBearing, imu.heading(AngleUnit.DEGREES)));
