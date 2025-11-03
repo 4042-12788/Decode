@@ -21,6 +21,7 @@ public class Tele extends LinearOpMode {
         waitForStart();
         telemetry.addLine("Initializing");
         telemetry.update();
+        robot.imu.startingHeading = robot.imu.heading();
 
         while (opModeIsActive()){
             gp1.update();
