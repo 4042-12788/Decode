@@ -1,8 +1,8 @@
 //package org.firstinspires.ftc.teamcode.auto;
 //import com.qualcomm.robotcore.util.ElapsedTime;
 //
-//import org.firstinspires.ftc.teamcode.Robot;
-//import org.firstinspires.ftc.teamcode.PIDController;
+//import org.firstinspires.ftc.teamcode.botParts.Robot;
+//import org.firstinspires.ftc.teamcode.auto.PIDController;
 ////import org.firstinspires.ftc.teamcode.util.MathHelper;
 ////git import org.firstinspires.ftc.teamcode.util.TeleSingle;
 //
