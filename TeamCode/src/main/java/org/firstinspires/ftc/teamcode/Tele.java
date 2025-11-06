@@ -3,6 +3,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
+
 @TeleOp
 public class Tele extends LinearOpMode {
     Robot robot;
@@ -21,7 +23,7 @@ public class Tele extends LinearOpMode {
         waitForStart();
         telemetry.addLine("Initializing");
         telemetry.update();
-        robot.imu.startingHeading = robot.imu.heading();
+        robot.imu.startingHeading = robot.imu.heading(AngleUnit.RADIANS);
 
         while (opModeIsActive()){
             gp1.update();
