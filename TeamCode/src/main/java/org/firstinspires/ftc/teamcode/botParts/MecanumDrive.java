@@ -1,5 +1,4 @@
 package org.firstinspires.ftc.teamcode.botParts;
-
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -14,12 +13,12 @@ public class MecanumDrive {
     private DcMotor rightBackDrive;
 
     //Input
-    private double inputScalerX = 0.7;
-    private double inputScalerY = 0.7;
+    private double inputScalerX = -0.7;
+    private double inputScalerY = -0.7;
     private double inputScalerRot = 0.5;
 
 
-    public MecanumDrive(HardwareMap hardwareMap, Telemetry telemetry) {
+    public MecanumDrive(HardwareMap hardwareMap, Telemetry telemetry){
 
         // Gets the motor from the hub, make sure the name matches the config on the Driver hub
         leftFrontDrive = hardwareMap.get(DcMotor.class, "lf");
@@ -32,10 +31,9 @@ public class MecanumDrive {
         rightFrontDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightBackDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        telemetry.update();
     }
 
-    public void setDrivePowers(double lf, double lb, double rf, double rb) {
+    public void setDrivePowers(double lf, double lb, double rf, double rb){
         leftFrontDrive.setPower(lf);
         leftBackDrive.setPower(lb);
         rightFrontDrive.setPower(rf);
@@ -55,13 +53,15 @@ public class MecanumDrive {
 
         setDrivePowers(leftFrontPower, leftBackPower, rightFrontPower, rightBackPower);
     }
-    public void FieldOrientedDrive(double x, Double y, double rot, InertialMeasurementUnit imu) {
-        double theta = Math.atan2(y, x);
-        double distance = Math.hypot(x, y);
+    public void FieldOrientedDrive(double right, double forward, double rotate, InertialMeasurementUnit imu) {
+        double theta = Math.atan2(forward, right);
+        double r = Math.hypot(right, forward);
         theta = AngleUnit.normalizeRadians(theta - imu.heading(AngleUnit.RADIANS));
-        double newX = distance * Math.sin(theta);
-        double newY = distance * Math.cos(theta);
-        calculateDrivePowers(newX, newY, rot);
+        double newForward = r * Math.sin(theta);
+        double newRight = r * Math.cos(theta);
+        calculateDrivePowers(newRight, newForward, rotate);
 
     }
 }
+
+

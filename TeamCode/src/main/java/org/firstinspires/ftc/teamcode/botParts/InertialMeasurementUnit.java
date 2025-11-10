@@ -8,7 +8,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 public class InertialMeasurementUnit {
     private IMU imu;
-    public double startingHeading = 0;
+    public double startingHeading;
     public InertialMeasurementUnit(HardwareMap hardwareMap, Telemetry telemetry){
         imu = hardwareMap.get(IMU.class,"imu");
         RevHubOrientationOnRobot revOrientation = new RevHubOrientationOnRobot(
@@ -23,6 +23,10 @@ public class InertialMeasurementUnit {
         } else {
             return (imu.getRobotYawPitchRollAngles().getYaw(angleUnit) - Math.toDegrees(startingHeading));
         }
+
+    }
+    public void setStartingHeading(){
+        startingHeading = imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.RADIANS);
     }
 }
 

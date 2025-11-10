@@ -1,30 +1,32 @@
 package org.firstinspires.ftc.teamcode.botParts;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.teamcode.auto.PIDController;
-import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 
 public class Launcher {
     private DcMotor flyWheel;
     //private Servo launchServo;
-    private PIDController control = new PIDController();
+    //private PIDController control = new PIDController();
 
-    public Launcher(HardwareMap hardwareMap, Telemetry telemetry){
+    public Launcher(HardwareMap hardwareMap, Telemetry telemetry) {
         flyWheel = hardwareMap.get(DcMotor.class, "Flywheel");
         //launchServo = hardwareMap.get(Servo.class, "Launch Servo");
-        control.setP(0);
-        control.setI(0);
-        control.setD(0);
+//        control.setP(0);
+//        control.setI(0);
+//        control.setD(0);
     }
-    public void launchArtifact(Button x){
-        if(x.pressing()){
-           flyWheel.setPower(1);
+    public void launchArtifact(double rTrig, Button rbump, Button farlauch){
+        if(rTrig>0.05){
+           flyWheel.setPower(0.815);
+        } else if (rbump.pressing()) {
+            flyWheel.setPower(-1);
         } else {
             flyWheel.setPower(0);
+        }
+        if (farlauch.pressing()){
+            flyWheel.setPower(1);
         }
     }
 
