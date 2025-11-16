@@ -68,8 +68,8 @@ public class Tele extends LinearOpMode {
             //-------------------------------------------------------------------------------------
             //                                  TELEMETRY
             //-------------------------------------------------------------------------------------
-            telemetry.addData("heading:", robot.imu.heading(AngleUnit.DEGREES));
-            telemetry.addData("start heading:", Math.toDegrees(robot.imu.startingHeading));
+            telemetry.addData("velocity: ",robot.launcher.getFlywheelVelocity());
+            telemetry.addData("Power: ", robot.launcher.getFlywheelPower());
             telemetry.update();
         }
     }
