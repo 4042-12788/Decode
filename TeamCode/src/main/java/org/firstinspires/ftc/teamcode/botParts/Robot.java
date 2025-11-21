@@ -11,7 +11,7 @@ public class Robot {
     //public CamServo cameraServo;
     public Intake intake;
     public InertialMeasurementUnit imu;
-    //public Camera cam;
+    public Camera cam;
     //public Odometry odo;
     public IntakeServo intakeServo;
 
@@ -24,7 +24,7 @@ public class Robot {
         //cameraServo = new CamServo(hardwareMap, telemetry);
         intake = new Intake(hardwareMap, telemetry);
         imu = new InertialMeasurementUnit(hardwareMap, telemetry);
-        //cam = new Camera(hardwareMap, telemetry);
+        cam = new Camera(hardwareMap, telemetry);
         //odo = new Odometry(hardwareMap, telemetry);
         intakeServo = new IntakeServo(hardwareMap, telemetry);
     }
