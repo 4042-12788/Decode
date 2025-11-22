@@ -53,7 +53,7 @@ public class Tele extends LinearOpMode {
             //                                  GAMEPAD 2
             //-------------------------------------------------------------------------------------
             //robot.launcher.launchArtifact(gp2.right_trigger, gp2.x,-gp1.left_stick_x,-gp1.left_stick_y, robot.drive, robot.imu, robot.cam, allianceTag);
-            robot.launcher.launchArtifact(gp2.right_trigger, gp2.right_bumper, gp2.b);
+            robot.launcher.launchArtifact(gp2.right_trigger, gp2.right_bumper, gp2.b, robot.cam.getRange());
             robot.intake.intake(gp2.left_trigger, gp2.left_bumper.pressing());
             if (gp2.x.pressing()){
                 robot.intakeServo.close();
@@ -68,8 +68,13 @@ public class Tele extends LinearOpMode {
             //-------------------------------------------------------------------------------------
             //                                  TELEMETRY
             //-------------------------------------------------------------------------------------
+<<<<<<< HEAD
             //telemetry.addData("velocity: ",robot.launcher.getFlywheelVelocity());
             telemetry.addData("Power: ", robot.launcher.getFlywheelPower());
+=======
+            telemetry.addData("range", robot.cam.getRange());
+            telemetry.addData("speed", robot.launcher.getFlywheelVelocity());
+>>>>>>> ffee39083e46610bcda865d1784e21521bdea0cb
             telemetry.update();
         }
     }
