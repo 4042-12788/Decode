@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.botParts;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.teamcode.Odometry.Odometry;
 //import org.firstinspires.ftc.teamcode.Odometry.Odometry;
 
 public class Robot {
@@ -12,7 +13,7 @@ public class Robot {
     public Intake intake;
     public InertialMeasurementUnit imu;
     //public Camera cam;
-    //public Odometry odo;
+    public Odometry odo;
     public IntakeServo intakeServo;
 
     public Robot(HardwareMap hardwareMap, Telemetry telemetry) {

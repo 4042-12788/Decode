@@ -20,4 +20,11 @@ public class Intake {
             intakeWheel.setPower(1);
         }
     }
+    public void intake(){
+        intakeWheel.setPower(1);
+    }
+    public void stop(){
+        intakeWheel.setPower(0);
+    }
+
 }

@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.Navigation;
 
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-public class PIDController {
+public abstract class PIDController implements NavigationController{
 
     double integralSum;
     public double kp;
@@ -19,5 +19,9 @@ public class PIDController {
         pidTimer.reset();
         double outPut = (error * kp) + (derivative * kd) + (integralSum * ki);
         return outPut;
+    }
+    protected double[] getPIDValues(double currentPos, double targetPos) {
+        //Calculate PID values
+        return new double[] {};
     }
 }

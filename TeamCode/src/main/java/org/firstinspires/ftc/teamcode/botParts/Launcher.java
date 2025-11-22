@@ -1,6 +1,19 @@
 package org.firstinspires.ftc.teamcode.botParts;
 
-public void launchArtifact(double rTrig, Button rbump, Button farlauch){
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
+
+import org.firstinspires.ftc.robotcore.external.Telemetry;
+
+public class Launcher{
+private DcMotor flyWheel;
+    public Launcher(HardwareMap hardwareMap, Telemetry telemetry){
+        flyWheel = hardwareMap.get(DcMotor.class, " flyWheel");
+
+
+    }
+    public void launchArtifact(double rTrig, Button rbump, Button farlauch){
         if(rTrig>0.05){
            flyWheel.setPower(0.8);
         } else if (rbump.pressing()) {
@@ -12,11 +25,17 @@ public void launchArtifact(double rTrig, Button rbump, Button farlauch){
             flyWheel.setPower(1);
         }
     }
-    public double getFlywheelVelocity(){
-        return flyWheel.getVelocity();
-    }
+//    public double getFlywheelVelocity(){
+//        return flyWheel.getVelocity();
+//    }
     public double getFlywheelPower(){
         return flyWheel.getPower();
+    }
+    public void launchArtifact(){
+        flyWheel.setPower(.8);
+    }
+    public void stop(){
+        flyWheel.setPower(0);
     }
 
     // motor power one is 1820 velocity
