@@ -10,7 +10,7 @@ public class Launcher{
 private DcMotorEx flyWheel;
 //private PIDFCoefficients PIDF = new PIDFCoefficients(1,0,0,18);
     public Launcher(HardwareMap hardwareMap, Telemetry telemetry){
-        flyWheel = hardwareMap.get(DcMotorEx.class, " flyWheel");
+        flyWheel = hardwareMap.get(DcMotorEx.class, "flyWheel");
         flyWheel.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         //flyWheel.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER,PIDF);
 
@@ -18,7 +18,7 @@ private DcMotorEx flyWheel;
     public void launchArtifact(double rTrig, Button rbump, Button farlauch, double range){
         if(rTrig>0.05){
             //flyWheel.setPower(0.8);
-            //flyWheel.setVelocity(1000);
+            flyWheel.setVelocity(1000);
             flyWheel.setVelocity((3.04876 * range) + 637.11234 + 80);
         } else if (rbump.pressing()) {
             flyWheel.setPower(-1);
