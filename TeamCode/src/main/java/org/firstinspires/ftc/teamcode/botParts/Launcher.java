@@ -25,6 +25,7 @@ private DcMotorEx flyWheel;
         } else {
             flyWheel.setPower(0);
         }
+
         if (farlauch.pressing()){
             flyWheel.setPower(1);
         }
