@@ -32,19 +32,11 @@ public class IntakeServo {
 
     public void open(){
         //IntakeServo.setDirection(Servo.Direction.REVERSE);
-<<<<<<< HEAD
         IntakeServo.setPosition(0.3); //0.34
     }
     public void close(){
         //IntakeServo.setDirection(Servo.Direction.FORWARD);
         IntakeServo.setPosition(0.8); //0.68
-=======
-        IntakeServo.setPosition(0.4);
-    }
-    public void close(){
-        //IntakeServo.setDirection(Servo.Direction.FORWARD);
-        IntakeServo.setPosition(0.8);
->>>>>>> ffee39083e46610bcda865d1784e21521bdea0cb
     }
 }
 
