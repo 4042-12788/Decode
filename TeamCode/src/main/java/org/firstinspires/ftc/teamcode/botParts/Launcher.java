@@ -36,8 +36,8 @@ private DcMotorEx flyWheel;
     public double getFlywheelPower(){
         return flyWheel.getPower();
     }
-    public void launchArtifact(){
-        flyWheel.setPower(.8);
+    public void launchArtifact(double launchSpeed){
+        flyWheel.setPower(launchSpeed);
     }
     public void stop(){
         flyWheel.setPower(0);
