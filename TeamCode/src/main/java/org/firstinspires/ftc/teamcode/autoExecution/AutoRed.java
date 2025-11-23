@@ -36,7 +36,7 @@ import static org.firstinspires.ftc.teamcode.auto.AutoActions.CLOSE;
 
 
 @Autonomous
-public class AutoTest extends LinearOpMode {
+public class AutoRed extends LinearOpMode {
     Robot robot;
     AutoActionHandler actionHandler;
 
@@ -52,11 +52,11 @@ public class AutoTest extends LinearOpMode {
         actionHandler = new AutoActionHandler(robot, telemetry);
 
 
-      //  actionHandler.add(WAIT,false,1);
+        //  actionHandler.add(WAIT,false,1);
         actionHandler.add(BACK,false,.85);
         actionHandler.add(STOP,false);
 //        actionHandler.add(BACK,false,1);
-        actionHandler.add(LAUNCH, false);
+        actionHandler.add(LAUNCH, false, .6);
 
         actionHandler.add(INTO, false);
         actionHandler.add(CLOSE, false);

@@ -24,6 +24,7 @@ import static org.firstinspires.ftc.teamcode.auto.AutoActions.STOP;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.STOPINT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.STOPOUT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.TURNLEFT;
+import static org.firstinspires.ftc.teamcode.auto.AutoActions.TURNRIGHT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.WAIT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.CLOSE;
 
@@ -36,7 +37,7 @@ import static org.firstinspires.ftc.teamcode.auto.AutoActions.CLOSE;
 
 
 @Autonomous
-public class AutoTest extends LinearOpMode {
+public class AutoBlue extends LinearOpMode {
     Robot robot;
     AutoActionHandler actionHandler;
 
@@ -52,17 +53,17 @@ public class AutoTest extends LinearOpMode {
         actionHandler = new AutoActionHandler(robot, telemetry);
 
 
-      //  actionHandler.add(WAIT,false,1);
+        //  actionHandler.add(WAIT,false,1);
         actionHandler.add(BACK,false,.85);
         actionHandler.add(STOP,false);
 //        actionHandler.add(BACK,false,1);
-        actionHandler.add(LAUNCH, false);
+        actionHandler.add(LAUNCH, false, .6);
 
         actionHandler.add(INTO, false);
         actionHandler.add(CLOSE, false);
         actionHandler.add(STOPOUT, false);
 
-        actionHandler.add(TURNLEFT,false,.23 );
+        actionHandler.add(TURNRIGHT,false,.23 );
         actionHandler.add(FORWARD,false,.5);
         actionHandler.add(STOP,false);
 //        actionHandler.add(INTAKE, false);
