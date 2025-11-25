@@ -8,24 +8,23 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 public class Launcher{
 private DcMotorEx flyWheel;
-private PIDFCoefficients PIDF = new PIDFCoefficients(0,0,0,0);
+//private PIDFCoefficients PIDF = new PIDFCoefficients(1,0,0,18);
     public Launcher(HardwareMap hardwareMap, Telemetry telemetry){
-        flyWheel = hardwareMap.get(DcMotorEx.class, "flyWheel");
-        //flyWheel.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        flyWheel.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER,PIDF);
+        flyWheel = hardwareMap.get(DcMotorEx.class, " flyWheel");
+        flyWheel.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        //flyWheel.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER,PIDF);
 
     }
     public void launchArtifact(double rTrig, Button rbump, Button farlauch, double range){
         if(rTrig>0.05){
             //flyWheel.setPower(0.8);
-            flyWheel.setVelocity(800);
-            //flyWheel.setVelocity((3.04876 * range) + 637.11234);
+            //flyWheel.setVelocity(1000);
+            flyWheel.setVelocity((3.04876 * range) + 637.11234);
         } else if (rbump.pressing()) {
             flyWheel.setPower(-1);
         } else {
             flyWheel.setPower(0);
         }
-
         if (farlauch.pressing()){
             flyWheel.setPower(1);
         }
@@ -36,8 +35,8 @@ private PIDFCoefficients PIDF = new PIDFCoefficients(0,0,0,0);
     public double getFlywheelPower(){
         return flyWheel.getPower();
     }
-    public void launchArtifact(double launchSpeed){
-        flyWheel.setPower(launchSpeed);
+    public void launchArtifact(double launchVel){
+        flyWheel.setVelocity(launchVel);
     }
     public void stop(){
         flyWheel.setPower(0);

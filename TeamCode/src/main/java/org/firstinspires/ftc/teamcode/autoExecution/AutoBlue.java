@@ -57,14 +57,14 @@ public class AutoBlue extends LinearOpMode {
         actionHandler.add(BACK,false,.85);
         actionHandler.add(STOP,false);
 //        actionHandler.add(BACK,false,1);
-        actionHandler.add(LAUNCH, false, .6);
+        actionHandler.add(LAUNCH, false, 1092);
 
         actionHandler.add(INTO, false);
         actionHandler.add(CLOSE, false);
         actionHandler.add(STOPOUT, false);
 
         actionHandler.add(TURNRIGHT,false,.23 );
-        actionHandler.add(FORWARD,false,.5);
+        actionHandler.add(FORWARD,false,.8);
         actionHandler.add(STOP,false);
 //        actionHandler.add(INTAKE, false);
 //        actionHandler.add(STOPINT, false);

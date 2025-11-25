@@ -70,6 +70,7 @@ public class Tele extends LinearOpMode {
             //-------------------------------------------------------------------------------------
             //telemetry.addData("velocity: ",robot.launcher.getFlywheelVelocity());
             telemetry.addData("Velocity: ", robot.launcher.getFlywheelVelocity());
+            telemetry.addData("target vel", (3.04876 * robot.cam.getRange()) + 637.11234);
             telemetry.addData("range", robot.cam.getRange());
             telemetry.update();
         }
