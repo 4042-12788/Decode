@@ -19,7 +19,7 @@ private DcMotorEx flyWheel;
         if(rTrig>0.05){
             //flyWheel.setPower(0.8);
             //flyWheel.setVelocity(1000);
-            flyWheel.setVelocity((3.04876 * range) + 637.11234 + 80);
+            flyWheel.setVelocity((3.04876 * range) + 637.11234);
         } else if (rbump.pressing()) {
             flyWheel.setPower(-1);
         } else {
@@ -35,8 +35,8 @@ private DcMotorEx flyWheel;
     public double getFlywheelPower(){
         return flyWheel.getPower();
     }
-    public void launchArtifact(double launchSpeed){
-        flyWheel.setPower(launchSpeed);
+    public void launchArtifact(double launchVel){
+        flyWheel.setVelocity(launchVel);
     }
     public void stop(){
         flyWheel.setPower(0);

@@ -68,7 +68,7 @@ public class AutoActions {
     private double x;
     private double y;
     private double heading; // in degrees
-    private double launchSpeed;
+    private double launchVel;
 
 
     private double waitTime;
@@ -122,7 +122,7 @@ public class AutoActions {
         if (id == RIGHT) driveTime = value;
         if (id == LEFT) driveTime = value;
         if (id == TURNRIGHT || id == TURNLEFT) rotTime = value;
-        if (id == LAUNCH) launchSpeed = value;
+        if (id == LAUNCH) launchVel = value;
 
 
 
@@ -214,7 +214,7 @@ public class AutoActions {
 
     private void launch(){
         initAction();
-        robot.launcher.launchArtifact(launchSpeed);
+        robot.launcher.launchArtifact(launchVel);
 
         endAction = timer.milliseconds() > (5 * 1000);
     }
