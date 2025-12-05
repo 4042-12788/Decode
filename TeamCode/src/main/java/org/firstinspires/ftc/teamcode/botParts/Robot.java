@@ -14,7 +14,8 @@ public class Robot {
     public InertialMeasurementUnit imu;
     public Camera cam;
     public Odometry odo;
-    public IntakeServo intakeServo;
+    public Storage storage;
+    //public IntakeServo intakeServo;
 
     public Robot(HardwareMap hardwareMap, Telemetry telemetry) {
         this.hardwareMap = hardwareMap;
@@ -26,8 +27,10 @@ public class Robot {
         intake = new Intake(hardwareMap, telemetry);
         imu = new InertialMeasurementUnit(hardwareMap, telemetry);
         cam = new Camera(hardwareMap, telemetry);
+        storage = new Storage(hardwareMap, telemetry);
         //odo = new Odometry(hardwareMap, telemetry);
-        intakeServo = new IntakeServo(hardwareMap, telemetry);
+        //intakeServo = new IntakeServo(hardwareMap, telemetry);
+
     }
     public void shutOff(){
         drive.calculateDrivePowers(0,0,0);

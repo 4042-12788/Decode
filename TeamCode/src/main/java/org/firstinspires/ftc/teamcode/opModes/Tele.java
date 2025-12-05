@@ -55,12 +55,13 @@ public class Tele extends LinearOpMode {
             //robot.launcher.launchArtifact(gp2.right_trigger, gp2.x,-gp1.left_stick_x,-gp1.left_stick_y, robot.drive, robot.imu, robot.cam, allianceTag);
             robot.launcher.launchArtifact(gp2.right_trigger, gp2.right_bumper, gp2.b, robot.cam.getRange());
             robot.intake.intake(gp2.left_trigger, gp2.left_bumper.pressing());
-            if (gp2.x.pressing()){
-                robot.intakeServo.close();
-            }else{
-
-                robot.intakeServo.open();
-            }
+            robot.storage.store(gp2.x.pressing(), gp2.dpad_down.pressing());
+//            if (gp2.x.pressing()){
+//                robot.intakeServo.close();
+//            }else{
+//
+//                robot.intakeServo.open();
+//            }
             //-------------------------------------------------------------------------------------
             //                                  AUTOMATIC
             //-------------------------------------------------------------------------------------
