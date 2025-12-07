@@ -58,7 +58,7 @@ public class AutoFarBlue extends LinearOpMode {
         actionHandler.add(TURNLEFT,false,.27 );
         actionHandler.add(STOP,false);
 //        actionHandler.add(BACK,false,1);
-        actionHandler.add(LAUNCH, false, 1150);
+        actionHandler.add(LAUNCH, false, -1500);
 
         //actionHandler.add(INTO, false);
         //actionHandler.add(CLOSE, false);

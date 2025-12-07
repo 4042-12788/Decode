@@ -57,7 +57,7 @@ public class AutoFarRed extends LinearOpMode {
         actionHandler.add(TURNRIGHT,false,.27 );
         actionHandler.add(STOP,false);
 
-        actionHandler.add(LAUNCH, false, 1150);
+        actionHandler.add(LAUNCH, false, -1500);
 
         //actionHandler.add(INTO, false);
        // actionHandler.add(CLOSE, false);
