@@ -6,9 +6,9 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.vision.VisionPortal;
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
-public class Camera{
+public class Camera {
 
-    public  AprilTagProcessor tagProcessor;
+    public static AprilTagProcessor tagProcessor;
     public VisionPortal visionPortal;
 
 
@@ -39,11 +39,31 @@ public class Camera{
 
         visionPortal.setProcessorEnabled(tagProcessor, true);
     }
-    public double getRange(){
-        if(!tagProcessor.getDetections().isEmpty()) {
+
+    public double getRange() {
+        if (!tagProcessor.getDetections().isEmpty()) {
             AprilTagDetection tag = tagProcessor.getDetections().get(0);
             return tag.ftcPose.range;
         } else return 126;
+    }
+
+    public static double aprilTagBearing() {
+        if (!tagProcessor.getDetections().isEmpty()) {
+            AprilTagDetection tag = tagProcessor.getDetections().get(0);
+            return tag.ftcPose.bearing;
+        } else {
+            return 0;
+        }
+
+    }
+
+    public static double aprilTagID() {
+        if (!tagProcessor.getDetections().isEmpty()) {
+            AprilTagDetection tag = tagProcessor.getDetections().get(0);
+            return tag.id;
+        } else {
+            return 0;
+        }
     }
 //        tagProcessor.getDetections().size()
 //        AprilTagDetection tag = tagProcessor.getDetections().get();
@@ -56,4 +76,5 @@ public class Camera{
 //        tag.ftcPose.range;
 //        tag.ftcPose.bearing;
 //        tag.ftcPose.elevation;
+
 }

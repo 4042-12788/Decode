@@ -12,9 +12,9 @@ public class Storage {
     }
     public void store(boolean forward, boolean backward){
         if (forward){
-            storageMotor.setPower(1);
-        } else if (backward) {
             storageMotor.setPower(-1);
+        } else if (backward) {
+            storageMotor.setPower(1);
         } else {
             storageMotor.setPower(0);
         }

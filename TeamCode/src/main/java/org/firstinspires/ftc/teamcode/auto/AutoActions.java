@@ -235,17 +235,17 @@ public class AutoActions {
         endAction = timer.milliseconds() > (5 * 1000);
     }
 
-    private void intoOut(){
-        initAction();
-        robot.intakeServo.close();
-        endAction = timer.milliseconds() > (1 * 1000);
-    }
-    private void closeOut(){
-        initAction();
-        robot.intakeServo.open();
-        endAction = timer.milliseconds() > (1 * 1000);
-
-    }
+//    private void intoOut(){
+//        initAction();
+//        robot.intakeServo.close();
+//        endAction = timer.milliseconds() > (1 * 1000);
+//    }
+//    private void closeOut(){
+//        initAction();
+//        robot.intakeServo.open();
+//        endAction = timer.milliseconds() > (1 * 1000);
+//
+//    }
     private void TurnRight(){
         initAction();
         robot.drive.setDrivePowers(1,1,1,1);
@@ -345,12 +345,12 @@ public class AutoActions {
             case STOPINT:
                 stopIntake();
                 break;
-            case INTO:
-                intoOut();
-                break;
-            case CLOSE:
-                closeOut();
-                break;
+//            case INTO:
+//                intoOut();
+//                break;
+//            case CLOSE:
+//                closeOut();
+//                break;
             case FORWARD:
                 Forward();
                 break;
