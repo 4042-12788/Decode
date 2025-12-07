@@ -53,18 +53,18 @@ public class AutoTest extends LinearOpMode {
 
 
       //  actionHandler.add(WAIT,false,1);
-        actionHandler.add(BACK,false,.85);
-        actionHandler.add(STOP,false);
+//        actionHandler.add(BACK,false,.85);
+//        actionHandler.add(STOP,false);
 //        actionHandler.add(BACK,false,1);
-        actionHandler.add(LAUNCH, false);
+        actionHandler.add(LAUNCH, false, 1300);
 
         //actionHandler.add(INTO, false);
         //actionHandler.add(CLOSE, false);
         actionHandler.add(STOPOUT, false);
 
-        actionHandler.add(TURNLEFT,false,.23 );
-        actionHandler.add(FORWARD,false,.5);
-        actionHandler.add(STOP,false);
+//        actionHandler.add(TURNLEFT,false,.23 );
+//        actionHandler.add(FORWARD,false,.5);
+//        actionHandler.add(STOP,false);
 //        actionHandler.add(INTAKE, false);
 //        actionHandler.add(STOPINT, false);
 
