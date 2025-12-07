@@ -18,15 +18,15 @@ private DcMotorEx flyWheel;
     public void launchArtifact(double rTrig, Button rbump, Button farlauch, double range){
         if(rTrig>0.05){
             //flyWheel.setPower(0.8);
-            //flyWheel.setVelocity(1000);
-            flyWheel.setVelocity((3.04876 * range) + 637.11234);
+            //flyWheel.setVelocity(-2000);
+            flyWheel.setVelocity((-5.53733 * range) - 251.91339);//ts is not final
         } else if (rbump.pressing()) {
-            flyWheel.setPower(-1);
+            flyWheel.setPower(1);
         } else {
             flyWheel.setPower(0);
         }
         if (farlauch.pressing()){
-            flyWheel.setPower(1);
+            flyWheel.setPower(-1);
         }
     }
     public double getFlywheelVelocity(){

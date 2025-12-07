@@ -29,28 +29,28 @@ public class CamServo {
         } else if (!RED) {
             allianceColorTag = 20;
         }
-        cameraServo.setPosition(0.5);
+        cameraServo.setPosition(1);
         //moves the servo to face an apriltag so that the bearing is 0
 
-        if(Camera.aprilTagBearing()!= 0 ) {
-            if(!Camera.tagProcessor.getDetections().isEmpty() && Camera.aprilTagID() == allianceColorTag){
-                //if(((cameraServo.getPosition() - 0.5) * 90) + (Camera.aprilTagBearing()) >= 0||cameraServo.getPosition() + (Camera.aprilTagBearing()/180)<1) {
-                    cameraServo.setPosition(cameraServo.getPosition() + (Camera.aprilTagBearing() + 90) / 90);
-                //} else if (Camera.aprilTagBearing()>0) {
-                    //cameraServo.setPosition(1);
-                //}else {
-                    //cameraServo.setPosition(0);
-                //}
-            }else {
-                cameraServo.setPosition(0);
-                if (Camera.tagProcessor.getDetections().isEmpty() && Camera.aprilTagID() != allianceColorTag) {
-                    cameraServo.setPosition(0.5);
-                    if (Camera.tagProcessor.getDetections().isEmpty() && Camera.aprilTagID() != allianceColorTag) {
-                        cameraServo.setPosition(1);
-                    }
-                }
-            }
-        }
-        //robotBearing = ((cameraServo.getPosition() - 0.5) * 180) + Camera.aprilTagBearing;
+//        if(Camera.aprilTagBearing()!= 0 ) {
+//            if(!Camera.tagProcessor.getDetections().isEmpty() && Camera.aprilTagID() == allianceColorTag){
+//                //if(((cameraServo.getPosition() - 0.5) * 90) + (Camera.aprilTagBearing()) >= 0||cameraServo.getPosition() + (Camera.aprilTagBearing()/180)<1) {
+//                    cameraServo.setPosition(cameraServo.getPosition() + (Camera.aprilTagBearing() + 90) / 90);
+//                //} else if (Camera.aprilTagBearing()>0) {
+//                    //cameraServo.setPosition(1);
+//                //}else {
+//                    //cameraServo.setPosition(0);
+//                //}
+//            }else {
+//                cameraServo.setPosition(0);
+//                if (Camera.tagProcessor.getDetections().isEmpty() && Camera.aprilTagID() != allianceColorTag) {
+//                    cameraServo.setPosition(0.5);
+//                    if (Camera.tagProcessor.getDetections().isEmpty() && Camera.aprilTagID() != allianceColorTag) {
+//                        cameraServo.setPosition(1);
+//                    }
+//                }
+//            }
+//        }
+//        //robotBearing = ((cameraServo.getPosition() - 0.5) * 180) + Camera.aprilTagBearing;
     }
 }
