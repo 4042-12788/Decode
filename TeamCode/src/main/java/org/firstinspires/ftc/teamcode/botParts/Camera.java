@@ -44,7 +44,7 @@ public class Camera {
         if (!tagProcessor.getDetections().isEmpty()) {
             AprilTagDetection tag = tagProcessor.getDetections().get(0);
             return tag.ftcPose.range;
-        } else return 126;
+        } else return 165;
     }
 
     public static double aprilTagBearing() {

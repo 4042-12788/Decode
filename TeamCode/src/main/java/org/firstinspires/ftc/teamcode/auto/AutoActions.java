@@ -239,7 +239,7 @@ public class AutoActions {
 
     private void intoOut(){
        initAction();
-            robot.storage.store(false, true);
+            robot.storage.store(true, false);
        endAction = timer.milliseconds() > (1.5 * 1000);
     }
     private void closeOut(){
