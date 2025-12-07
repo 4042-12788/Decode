@@ -15,7 +15,7 @@ import org.firstinspires.ftc.teamcode.util.TeleSingle;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.BACK;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.FORWARD;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.INTAKE;
-import static org.firstinspires.ftc.teamcode.auto.AutoActions.INTO;
+//import static org.firstinspires.ftc.teamcode.auto.AutoActions.INTO;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.LAUNCH;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.LEFT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.MOVE;
@@ -26,7 +26,7 @@ import static org.firstinspires.ftc.teamcode.auto.AutoActions.STOPOUT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.TURNLEFT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.TURNRIGHT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.WAIT;
-import static org.firstinspires.ftc.teamcode.auto.AutoActions.CLOSE;
+//import static org.firstinspires.ftc.teamcode.auto.AutoActions.CLOSE;
 
 
 
@@ -56,11 +56,11 @@ public class AutoFarRed extends LinearOpMode {
         actionHandler.add(FORWARD,false,1.4);
         actionHandler.add(TURNRIGHT,false,.27 );
         actionHandler.add(STOP,false);
-//        actionHandler.add(BACK,false,1);
+
         actionHandler.add(LAUNCH, false, 1150);
 
-        actionHandler.add(INTO, false);
-        actionHandler.add(CLOSE, false);
+        //actionHandler.add(INTO, false);
+       // actionHandler.add(CLOSE, false);
         actionHandler.add(STOPOUT, false);
         actionHandler.add(TURNLEFT,false,.14 );
 

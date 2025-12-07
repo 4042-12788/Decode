@@ -15,7 +15,7 @@ import org.firstinspires.ftc.teamcode.util.TeleSingle;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.BACK;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.FORWARD;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.INTAKE;
-import static org.firstinspires.ftc.teamcode.auto.AutoActions.INTO;
+//import static org.firstinspires.ftc.teamcode.auto.AutoActions.INTO;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.LAUNCH;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.LEFT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.MOVE;
@@ -25,7 +25,7 @@ import static org.firstinspires.ftc.teamcode.auto.AutoActions.STOPINT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.STOPOUT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.TURNLEFT;
 import static org.firstinspires.ftc.teamcode.auto.AutoActions.WAIT;
-import static org.firstinspires.ftc.teamcode.auto.AutoActions.CLOSE;
+//import static org.firstinspires.ftc.teamcode.auto.AutoActions.CLOSE;
 
 
 
@@ -58,8 +58,8 @@ public class AutoTest extends LinearOpMode {
 //        actionHandler.add(BACK,false,1);
         actionHandler.add(LAUNCH, false);
 
-        actionHandler.add(INTO, false);
-        actionHandler.add(CLOSE, false);
+        //actionHandler.add(INTO, false);
+        //actionHandler.add(CLOSE, false);
         actionHandler.add(STOPOUT, false);
 
         actionHandler.add(TURNLEFT,false,.23 );
