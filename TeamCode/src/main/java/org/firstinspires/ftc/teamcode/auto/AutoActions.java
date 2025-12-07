@@ -38,8 +38,8 @@ public class AutoActions {
     public static final int STOPOUT = 3;
     public static final int INTAKE = 4;
     public static final int STOPINT = 5;
-    public static final int INTO = 6;
-    public static final int CLOSE = 7;
+//    public static final int INTO = 6;
+//    public static final int CLOSE = 7;
     public static final int FORWARD = 8;
     public static final int BACK = 9;
 
@@ -215,8 +215,11 @@ public class AutoActions {
     private void launch(){
         initAction();
         robot.launcher.launchArtifact(launchVel);
+        if( timer.milliseconds() > (4.5 * 1000)){
+            robot.storage.store(true, false);
+        }
 
-        endAction = timer.milliseconds() > (5 * 1000);
+        endAction = timer.milliseconds() > (6 * 1000);
     }
     private void endOuttake(){
         initAction();
@@ -237,7 +240,7 @@ public class AutoActions {
 
 //    private void intoOut(){
 //        initAction();
-//        robot.intakeServo.close();
+//        robot.intake.close();
 //        endAction = timer.milliseconds() > (1 * 1000);
 //    }
 //    private void closeOut(){

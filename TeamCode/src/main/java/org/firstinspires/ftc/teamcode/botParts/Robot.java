@@ -9,7 +9,7 @@ public class Robot {
     public Telemetry telemetry;
     public MecanumDrive drive;
     public Launcher launcher;
-    //public CamServo cameraServo;
+    public CamServo cameraServo;
     public Intake intake;
     public InertialMeasurementUnit imu;
     public Camera cam;
@@ -23,7 +23,7 @@ public class Robot {
 
         drive = new MecanumDrive(hardwareMap, telemetry);
         launcher = new Launcher(hardwareMap, telemetry);
-        //cameraServo = new CamServo(hardwareMap, telemetry);
+        cameraServo = new CamServo(hardwareMap, telemetry);
         intake = new Intake(hardwareMap, telemetry);
         imu = new InertialMeasurementUnit(hardwareMap, telemetry);
         cam = new Camera(hardwareMap, telemetry);
