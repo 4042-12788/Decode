@@ -56,7 +56,7 @@ public class AutoRed extends LinearOpMode {
         actionHandler.add(BACK,false,.85);
         actionHandler.add(STOP,false);
 //        actionHandler.add(BACK,false,1);
-        actionHandler.add(LAUNCH, false, -1640);
+        actionHandler.add(LAUNCH, false, -1440);
 
         actionHandler.add(INTO, false);
         actionHandler.add(CLOSE, false);
